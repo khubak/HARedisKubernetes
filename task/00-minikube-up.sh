@@ -72,7 +72,7 @@ case "$(uname -s)" in
      minikube config set vm-driver virtualbox;;
 esac
 
-( minikube status ) || minikube start --kubernetes-version ${KUBERNETES_VERSION} --nodes 2
+( minikube status ) || minikube start --kubernetes-version ${KUBERNETES_VERSION} --nodes 2 --network-plugin=cni --cni=flannel
 
 # enable metrics server
 minikube addons enable metrics-server
