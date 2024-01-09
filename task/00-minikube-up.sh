@@ -64,6 +64,8 @@ EOF
         }
 }
 
+minikube config set WantVirtualBoxDriverWarning false
+
 case "$(uname -s)" in
    # if running on MacOS then use hyperkit virtualizator
    Darwin*)
@@ -72,7 +74,7 @@ case "$(uname -s)" in
      minikube config set vm-driver virtualbox;;
 esac
 
-( minikube status ) || minikube start --kubernetes-version ${KUBERNETES_VERSION} --nodes 2 --network-plugin=cni --cni=flannel
+( minikube status ) || minikube start --nodes 2 --network-plugin=cni --cni=calico
 
 # enable metrics server
 minikube addons enable metrics-server
