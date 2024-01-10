@@ -1,7 +1,5 @@
 #!/bin/bash
 
-REDIS_PWD = 'opstergo1234'
-
 # Read data from the file and import into Redis
 if [ ! -f "data.txt" ]; then
     echo "Error: File 'data.txt' not found."
@@ -9,7 +7,7 @@ if [ ! -f "data.txt" ]; then
 fi
 
 while IFS= read -r line; do
-    redis-cli -a $REDIS_PWD $line
+    redis-cli -a opstergo1234 $line
 done < "data.txt"
 
 echo "Data imported to Redis successfully."
