@@ -1,4 +1,4 @@
 # HARedisKubernetes
 
-work in progress
+work in progress \\
 Redis HA (replication) achieved
