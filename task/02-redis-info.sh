@@ -1,1 +1,0 @@
-kubectl create -f ./yamls/cronjob.yaml
