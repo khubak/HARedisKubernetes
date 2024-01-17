@@ -11,8 +11,8 @@ data:
     #
     # ./redis-server /path/to/redis.conf
     #slaveof 10.244.0.4 6379
-    masterauth opstergo1234
-    requirepass opstergo1234
+    masterauth passw0rd
+    requirepass passw0rd
     # Note on units: when memory size is needed, it is possible to specify
     # it in the usual form of 1k 5GB 4M and so forth:
     #
