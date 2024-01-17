@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: redisInfo
 spec:
-  schedule: "* * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
