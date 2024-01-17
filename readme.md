@@ -10,8 +10,8 @@ Goal of this task is to create scripts and resources enabling local Kubernetes, 
 ## Guidelines and organisation
 
  * each written script should be verbose, and guide developer if something is missing
- * don't use Helm for deplyoment
- * for ease of use, script prefix should start with two digits number, ie. `00-minikube-up.sh` (already provided)
+ * no Helm usage for deplyoment
+ * for ease of use, script prefix should start with two digits number, ie. `00-minikube-up.sh`
  * each script should have it's undo (inverse) "sister" script that deletes stuff
  * inverse scripts should start with prefix 99, decreasing with each new script, ie. `99-minikube-down.sh` deletes minikube installation created with `00-minikube-up.sh`
  * all services installed on kubernetes should be exposed "outside" Kubernetes to host service as well
