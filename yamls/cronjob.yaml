@@ -10,10 +10,10 @@ spec:
         spec:
           containers:
           - name: redisInfo
-            image: busybox:1.28
+            image: redis:6.2.3-alpine
             imagePullPolicy: IfNotPresent
             command:
-            - /bin/sh
-            - -c
-            - redis-cli INFO replication
+            - redis-cli -h redis-1.redis.redis.svc.cluster.local -p 6379
+            - auth passw0rd
+            - INFO replication
           restartPolicy: OnFailure
