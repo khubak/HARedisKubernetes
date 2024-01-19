@@ -1,5 +1,11 @@
 # High Availability Redis DB across multiple nodes in Kubernetes
 
+## TOADD
+monitoring, load balancing
+
+## TODO
+final polishing
+
 ## Idea
 
 Let's create HA master-slave, and some tasks around Redis DB.
