@@ -4,14 +4,14 @@ metadata:
   name: redis-info-job
   namespace: redis
 spec:
-  schedule: "*/1 * * * *"  # Run every 5 minutes
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: redis-info-container
-            image: redis:6.2.3-alpine  # You may need to adjust the image tag based on your requirements
+            image: redis:6.2.3-alpine
             command: ["redis-cli"]
             args:
             - "-h"
