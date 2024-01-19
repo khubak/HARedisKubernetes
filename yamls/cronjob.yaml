@@ -5,7 +5,12 @@ metadata:
   namespace: redis
 spec:
   schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
   jobTemplate:
+    metadata:
+      labels:
+        cron-job-name: redis-info
     spec:
       template:
         spec:
