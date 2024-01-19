@@ -1,19 +1,25 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: redisInfo
+  name: redis-info-job
+  namespace: redis
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "*/1 * * * *"  # Run every 5 minutes
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: redisInfo
-            image: redis:6.2.3-alpine
-            imagePullPolicy: IfNotPresent
-            command:
-            - redis-cli -h redis-1.redis.redis.svc.cluster.local -p 6379
-            - auth passw0rd
-            - INFO replication
+          - name: redis-info-container
+            image: redis:6.2.3-alpine  # You may need to adjust the image tag based on your requirements
+            command: ["redis-cli"]
+            args:
+            - "-h"
+            - "redis-1.redis.redis.svc.cluster.local"
+            - "-p"
+            - "6379"
+            - "-a"
+            - "passw0rd"
+            - "INFO"
+            - "replication"
           restartPolicy: OnFailure
