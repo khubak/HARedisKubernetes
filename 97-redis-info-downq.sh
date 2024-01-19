@@ -1,1 +1,1 @@
-kubectl delete cronjob redisInfo
+kubectl delete cronjob -n redis redis-info-job
