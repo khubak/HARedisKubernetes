@@ -1,7 +1,7 @@
 # High Availability Redis DB across multiple nodes in Kubernetes
 
 ## TOADD
-monitoring, load balancing
+monitoring, load balancing, tbd
 
 ## TODO
 final polishing
